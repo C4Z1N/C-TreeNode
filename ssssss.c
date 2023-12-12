@@ -20,10 +20,6 @@ int treeHeight(struct TreeNode* root) {
 }
 
 struct TreeNode* search(struct TreeNode* node, int key) {
-	/*if (node == NULL) return NULL;
-	if (key == node->data) return node;
-	else if (key < node->data) return search(node->left, key);
-	else return search(node->right, key);*/
 	while (node != NULL) {
 		if (key == node->data) return node;
 		else if (key < node->data) node = node->left;
@@ -106,10 +102,10 @@ int thisNull(struct TreeNode* root) {
 
 void nullNo(struct TreeNode* root) {
 	if (root != NULL) {
-		printf("¦¢ %4d¦¢", root->data);
+		printf("â”‚ %4dâ”‚", root->data);
 	}
 	else {
-		printf("¦¢ NULL¦¢");
+		printf("â”‚ NULLâ”‚");
 	}
 }
 
@@ -118,84 +114,84 @@ void arrange(struct TreeNode* root) {
 	height = treeHeight(root) + 1;
 	if (height == 0) {
 		printf("\n");
-		printf("¦£ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¤\n");
-		printf("¦¢                                         ¦¢\n");
-		printf("¦¢              Æ®¸®°¡ ¾ø¾î¿ä!             ¦¢\n");
-		printf("¦¢                                         ¦¢\n");
-		printf("¦¦ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¥\n");
+		printf("â”Œ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”\n");
+		printf("â”‚                                         â”‚\n");
+		printf("â”‚              íŠ¸ë¦¬ê°€ ì—†ì–´ìš”!             â”‚\n");
+		printf("â”‚                                         â”‚\n");
+		printf("â”” â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”˜\n");
 	}
 	else if (height == 1) {
 		if (current->data != NULL) {
-			printf("\n¦£ Root¦¤\n");
-			printf("¦¢ %4d¦¢\n", current->data);
-			printf("¦¦ ¦¡ ¦¡ ¦¥\n");
+			printf("\nâ”Œ Rootâ”\n");
+			printf("â”‚ %4dâ”‚\n", current->data);
+			printf("â”” â”€ â”€ â”˜\n");
 		}
 	}
 	else if (height == 2) {
 		printf("\n      ");
-		printf("¦£ Root¦¤\n");
+		printf("â”Œ Rootâ”\n");
 		printf("      ");
 		nullNo(current);
 		printf("\n      ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥\n");
-		printf("¦£ ¦¡ ¦¡ ¦¤     ");
-		printf("¦£ ¦¡ ¦¡ ¦¤\n");
+		printf("â”” â”€ â”€ â”˜\n");
+		printf("â”Œ â”€ â”€ â”     ");
+		printf("â”Œ â”€ â”€ â”\n");
 		nullNo(current->left);
 		printf("     ");
 		nullNo(current->right);
 		printf("\n");
-		printf("¦¦ ¦¡ ¦¡ ¦¥     ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥\n");
+		printf("â”” â”€ â”€ â”˜     ");
+		printf("â”” â”€ â”€ â”˜\n");
 	}
 	else if (height == 3) {
 		int left1 = 0;
 		int right1 = 0;
 		printf("\n                  ");
-		printf("¦£ Root¦¤\n");
+		printf("â”Œ Rootâ”\n");
 		printf("                  ");
 		nullNo(current);
 		printf("\n                  ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥\n");
+		printf("â”” â”€ â”€ â”˜\n");
 		printf("      ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                 ");
-		printf("¦£ ¦¡ ¦¡ ¦¤\n");
+		printf("â”Œ â”€ â”€ â”\n");
 		printf("      ");
 		if (current->left != NULL) nullNo(current->left);
 		else {
 			left1 = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                 ");
 		if (current->right != NULL) nullNo(current->right);
 		else {
 			right1 = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("\n      ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                 ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥\n");
-		printf("¦£ ¦¡ ¦¡ ¦¤     ");
-		printf("¦£ ¦¡ ¦¡ ¦¤     ");
-		printf("¦£ ¦¡ ¦¡ ¦¤     ");
-		printf("¦£ ¦¡ ¦¡ ¦¤\n");
+		printf("â”” â”€ â”€ â”˜\n");
+		printf("â”Œ â”€ â”€ â”     ");
+		printf("â”Œ â”€ â”€ â”     ");
+		printf("â”Œ â”€ â”€ â”     ");
+		printf("â”Œ â”€ â”€ â”\n");
 		if (left1 == 0) nullNo(current->left->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (left1 == 0) nullNo(current->left->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (right1 == 0) nullNo(current->right->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (right1 == 0) nullNo(current->right->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("\n");
-		printf("¦¦ ¦¡ ¦¡ ¦¥     ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥     ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥     ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥\n");
+		printf("â”” â”€ â”€ â”˜     ");
+		printf("â”” â”€ â”€ â”˜     ");
+		printf("â”” â”€ â”€ â”˜     ");
+		printf("â”” â”€ â”€ â”˜\n");
 	}
 	else if (height == 4) {
 		int l = 0;
@@ -205,39 +201,39 @@ void arrange(struct TreeNode* root) {
 		int rl = 0;
 		int rr = 0;
 		printf("\n                                          ");
-		printf("¦£ Root¦¤\n");
+		printf("â”Œ Rootâ”\n");
 		printf("                                          ");
 		nullNo(current);
 		printf("\n                                          ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("\n                  ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                                         ");
-		printf("¦£ ¦¡ ¦¡ ¦¤\n");
+		printf("â”Œ â”€ â”€ â”\n");
 		printf("                  ");
 		if (current->left != NULL) nullNo(current->left);
 		else {
 			l = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                                         ");
 		if (current->right != NULL) nullNo(current->right);
 		else {
 			r = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("\n                  ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                                         ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥\n");
+		printf("â”” â”€ â”€ â”˜\n");
 		printf("      ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                 ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                 ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                 ");
-		printf("¦£ ¦¡ ¦¡ ¦¤\n");
+		printf("â”Œ â”€ â”€ â”\n");
 		printf("      ");
 		if (l == 0) {
 			nullNo(current->left->left);
@@ -247,7 +243,7 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			ll = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                 ");
 		if (l == 0) {
@@ -258,7 +254,7 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			lr = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                 ");
 		if (r == 0) {
@@ -269,7 +265,7 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			rl = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                 ");
 		if (r == 0) {
@@ -280,56 +276,56 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			rr = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("\n      ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                 ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                 ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                 ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥\n");
-		printf("¦£ ¦¡ ¦¡ ¦¤     ");
-		printf("¦£ ¦¡ ¦¡ ¦¤     ");
-		printf("¦£ ¦¡ ¦¡ ¦¤     ");
-		printf("¦£ ¦¡ ¦¡ ¦¤     ");
-		printf("¦£ ¦¡ ¦¡ ¦¤     ");
-		printf("¦£ ¦¡ ¦¡ ¦¤     ");
-		printf("¦£ ¦¡ ¦¡ ¦¤     ");
-		printf("¦£ ¦¡ ¦¡ ¦¤\n");
+		printf("â”” â”€ â”€ â”˜\n");
+		printf("â”Œ â”€ â”€ â”     ");
+		printf("â”Œ â”€ â”€ â”     ");
+		printf("â”Œ â”€ â”€ â”     ");
+		printf("â”Œ â”€ â”€ â”     ");
+		printf("â”Œ â”€ â”€ â”     ");
+		printf("â”Œ â”€ â”€ â”     ");
+		printf("â”Œ â”€ â”€ â”     ");
+		printf("â”Œ â”€ â”€ â”\n");
 		if (ll == 0) nullNo(current->left->left->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (ll == 0) nullNo(current->left->left->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (lr == 0) nullNo(current->left->right->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (lr == 0) nullNo(current->left->right->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (rl == 0) nullNo(current->right->left->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (rl == 0) nullNo(current->right->left->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (rr == 0) nullNo(current->right->right->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (rr == 0) nullNo(current->right->right->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("\n");
-		printf("¦¦ ¦¡ ¦¡ ¦¥     ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥     ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥     ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥     ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥     ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥     ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥     ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥\n");
+		printf("â”” â”€ â”€ â”˜     ");
+		printf("â”” â”€ â”€ â”˜     ");
+		printf("â”” â”€ â”€ â”˜     ");
+		printf("â”” â”€ â”€ â”˜     ");
+		printf("â”” â”€ â”€ â”˜     ");
+		printf("â”” â”€ â”€ â”˜     ");
+		printf("â”” â”€ â”€ â”˜     ");
+		printf("â”” â”€ â”€ â”˜\n");
 	}
 	else if (height == 5) {
 		int l = 0;
@@ -349,7 +345,7 @@ void arrange(struct TreeNode* root) {
 		printf("\n");
 		printf("                                             ");
 		printf("                                             ");
-		printf("¦£ Root¦¤");
+		printf("â”Œ Rootâ”");
 		printf("\n");
 		printf("                                             ");
 		printf("                                             ");
@@ -357,42 +353,42 @@ void arrange(struct TreeNode* root) {
 		printf("\n");
 		printf("                                             ");
 		printf("                                             ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("\n");
 		printf("                                          ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                                             ");
 		printf("                                            ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("\n");
 		printf("                                          ");
 		if (current->left != NULL) nullNo(current->left);
 		else {
 			l = 1;
-			printf("¦¢ NULL¦¢");;
+			printf("â”‚ NULLâ”‚");;
 		}
 		printf("                                             ");
 		printf("                                            ");
 		if (current->right != NULL) nullNo(current->right);
 		else {
 			r = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("\n");
 		printf("                                          ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                                             ");
 		printf("                                            ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("\n");
 		printf("                  ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                                         ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                                         ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                                         ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("\n");
 		printf("                  ");
 		if (l == 0) {
@@ -403,7 +399,7 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			ll = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                                         ");
 		if (l == 0) {
@@ -414,7 +410,7 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			lr = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                                         ");
 		if (r == 0) {
@@ -425,7 +421,7 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			rl = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                                         ");
 		if (r == 0) {
@@ -436,34 +432,34 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			rr = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("\n");
 		printf("                  ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                                         ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                                         ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                                         ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("\n"); 
 		printf("      ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                 ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                 ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                 ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                 ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                 ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                 ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("                 ");
-		printf("¦£ ¦¡ ¦¡ ¦¤");
+		printf("â”Œ â”€ â”€ â”");
 		printf("\n");
 		printf("      ");
 		if (ll == 0) {
@@ -474,7 +470,7 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			lll = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                 ");
 		if (ll == 0) {
@@ -485,7 +481,7 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			llr = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                 ");
 		if (lr == 0) {
@@ -496,7 +492,7 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			lrl = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                 ");
 		if (lr == 0) {
@@ -507,7 +503,7 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			lrr = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                 ");
 		if (rl == 0) {
@@ -518,7 +514,7 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			rll = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                 ");
 		if (rl == 0) {
@@ -529,7 +525,7 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			rlr = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                 ");
 		if (rr == 0) {
@@ -540,7 +536,7 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			rrl = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("                 ");
 		if (rr == 0) {
@@ -551,83 +547,83 @@ void arrange(struct TreeNode* root) {
 		}
 		else {
 			rrr = 1;
-			printf("¦¢ NULL¦¢");
+			printf("â”‚ NULLâ”‚");
 		}
 		printf("\n");
 		printf("      ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                 ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                 ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                 ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                 ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                 ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                 ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("                 ");
-		printf("¦¦ ¦¡ ¦¡ ¦¥");
+		printf("â”” â”€ â”€ â”˜");
 		printf("\n");
 		for (int i = 0; i < 16; i++) {
-			printf("¦£ ¦¡ ¦¡ ¦¤");
+			printf("â”Œ â”€ â”€ â”");
 			if (i < 15) {
 				printf("     ");
 			}
 		}
 		printf("\n");
 		if (lll == 0) nullNo(current->left->left->left->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (lll == 0) nullNo(current->left->left->left->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (llr == 0) nullNo(current->left->left->right->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (llr == 0) nullNo(current->left->left->right->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (lrl == 0) nullNo(current->left->right->left->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (lrl == 0) nullNo(current->left->right->left->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (lrr == 0) nullNo(current->left->right->right->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (lrr == 0) nullNo(current->left->right->right->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (rll == 0) nullNo(current->right->left->left->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (rll == 0) nullNo(current->right->left->left->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (rlr == 0) nullNo(current->right->left->right->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (rlr == 0) nullNo(current->right->left->right->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (rrl == 0) nullNo(current->right->right->left->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (rrl == 0) nullNo(current->right->right->left->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (rrr == 0) nullNo(current->right->right->right->left);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("     ");
 		if (rrr == 0) nullNo(current->right->right->right->right);
-		else printf("¦¢ NULL¦¢");
+		else printf("â”‚ NULLâ”‚");
 		printf("\n");
 		for (int i = 0; i < 16; i++) {
-			printf("¦¦ ¦¡ ¦¡ ¦¥");
+			printf("â”” â”€ â”€ â”˜");
 			if (i < 15) {
 				printf("     ");
 			}
@@ -636,129 +632,29 @@ void arrange(struct TreeNode* root) {
 	}
 	else {
 		printf("\n");
-		printf("¦£ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¤\n");
-		printf("¦¢                                               ¦¢\n");
-		printf("¦¢                                               ¦¢\n");
-		printf("¦¢               Æ®¸®°¡ ³Ê¹« Ä¿¿ä!               ¦¢\n");
-		printf("¦¢                                               ¦¢\n");
-		printf("¦¢                                               ¦¢\n");
-		printf("¦¦ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¡ ¦¥\n");
+		printf("â”Œ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”\n");
+		printf("â”‚                                               â”‚\n");
+		printf("â”‚                                               â”‚\n");
+		printf("â”‚               íŠ¸ë¦¬ê°€ ë„ˆë¬´ ì»¤ìš”!               â”‚\n");
+		printf("â”‚                                               â”‚\n");
+		printf("â”‚                                               â”‚\n");
+		printf("â”” â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”€ â”˜\n");
 	}
 }
 
-//void nullNo(struct TreeNode* node) {
-//	if (node != NULL) {
-//		printf("¦¢ %4d¦¢", node->data);
-//	}
-//	else {
-//		printf("¦¢ NULL¦¢");
-//	}
-//}
-//
-//void printIndent(int level) {
-//	for (int i = 0; i < level; i++) {
-//		printf("      ");
-//	}
-//}
-//
-//void arrangeHelper(struct TreeNode* node, int level) {
-//	if (node == NULL) {
-//		printIndent(level);
-//		printf("¦£ ¦¡ ¦¡ ¦¤\n");
-//		printIndent(level);
-//		printf("¦¢ NULL¦¢\n");
-//		printIndent(level);
-//		printf("¦¦ ¦¡ ¦¡ ¦¥\n");
-//	}
-//	else {
-//		arrangeHelper(node->right, level + 1);
-//
-//		printIndent(level);
-//		printf("¦£ ¦¡ ¦¡ ¦¤\n");
-//
-//		printIndent(level);
-//		nullNo(node);
-//
-//		printf("\n");
-//
-//		printIndent(level);
-//		printf("¦¦ ¦¡ ¦¡ ¦¥\n");
-//
-//		arrangeHelper(node->left, level + 1);
-//	}
-//}
-//
-//void arrange(struct TreeNode* root) {
-//	printf("\n");
-//	arrangeHelper(root, 0);
-//}
-
 int main() {
 	int ins = 1;
-	printf("¡Ù¡Ú¡Ù¡Ú¡Ù¡Ú¡Ù¡ÚÀÌÁø Å½»ö Æ®¸®¡Ù¡Ú¡Ù¡Ú¡Ù¡Ú¡Ù¡Ú\n\nÆ®¸®¿¡ »ğÀÔÇÏ±â\n0 ÀÔ·Â ½Ã 0À» Á¦¿ÜÇÑ ±× ÀüÀÇ ¼ıÀÚµéÀ» Æ®¸®¿¡ »ğÀÔ\nÃ¹ ÀÔ·ÂÀº Æ®¸®ÀÇ ·çÆ®·Î °íÁ¤, ÃÖ´ë 5Ãş±îÁö Ãâ·Â\n·çÆ® ÀÔ·Â: ");
+	printf("â˜†â˜…â˜†â˜…â˜†â˜…â˜†â˜…ì´ì§„ íƒìƒ‰ íŠ¸ë¦¬â˜†â˜…â˜†â˜…â˜†â˜…â˜†â˜…\n\níŠ¸ë¦¬ì— ì‚½ì…í•˜ê¸°\n0 ì…ë ¥ ì‹œ 0ì„ ì œì™¸í•œ ê·¸ ì „ì˜ ìˆ«ìë“¤ì„ íŠ¸ë¦¬ì— ì‚½ì…\nì²« ì…ë ¥ì€ íŠ¸ë¦¬ì˜ ë£¨íŠ¸ë¡œ ê³ ì •, ìµœëŒ€ 5ì¸µê¹Œì§€ ì¶œë ¥\në£¨íŠ¸ ì…ë ¥: ");
 	scanf("%d", &ins);
-	printf("ÇÏÀ§ ¿ä¼Ò ÀÔ·Â: ");
+	printf("í•˜ìœ„ ìš”ì†Œ ì…ë ¥: ");
 	if(ins != 0) root = insert(root, ins);
 	while (ins > 0) {
 		scanf("%d", &ins);
 		if (ins == 0) break;
 		insert(root, ins);
 	}
-	/*int key;
-	printf("Ã£À» °ª: ");
-	scanf("%d", &key);
-	if (search(root, key) == NULL) {
-		if (key % 10 == 0 || key % 10 == 1 || key % 10 == 3 || key % 10 == 6 || key % 10 == 7 || key % 10 == 8) printf("%dÀº Æ®¸®¿¡¼­ Ã£À» ¼ö ¾ø½À´Ï´Ù.\n", key);
-		else printf("%d´Â Æ®¸®¿¡¼­ Ã£À» ¼ö ¾ø½À´Ï´Ù.\n", key);
-	}
-	else if (search(root, key)) {
-		if (key % 10 == 0 || key % 10 == 1 || key % 10 == 3 || key % 10 == 6 || key % 10 == 7 || key % 10 == 8) printf("%dÀº Æ®¸®¿¡¼­ Ã£À» ¼ö ÀÖ½À´Ï´Ù.\n", key);
-		else printf("%d´Â Æ®¸®¿¡¼­ Ã£À» ¼ö ÀÖ½À´Ï´Ù.\n", key);
-	}*/
-	/*root = insert(root, 50);
-	insert(root, 18);
-	insert(root, 64);
-	insert(root, 5);
-	insert(root, 31);
-	insert(root, 58);
-	insert(root, 79);
-	insert(root, 15);
-	insert(root, 69);
-	insert(root, 38);
-	insert(root, 2);
-	insert(root, 55);
-	insert(root, 1);
-	insert(root, 4);
-	insert(root, 11);
-	insert(root, 16);
-	insert(root, 53);
-	insert(root, 57);
-	insert(root, 62);
-	insert(root, 61);
-	insert(root, 66);
-	insert(root, 76);
-	insert(root, 85);
-	insert(root, 97);
-	insert(root, 25);
-	insert(root, 28);
-	insert(root, 33);
-	insert(root, 60);*/
-	/*
-	insert(root, 9);
-	insert(root, 31);
-	insert(root, 68);
-	insert(root, 76);
-	insert(root, 3);
-	insert(root, 15);
-	insert(root, 20);
-	insert(root, 58);
-	insert(root, 70);
-	insert(root, 59);
-	insert(root, 63);
-	insert(root, 95);
-	insert(root, 81);*/
 	inorder(root);
-	printf("\n%dÃş\n", treeHeight(root) + 1);
+	printf("\n%dì¸µ\n", treeHeight(root) + 1);
 	arrange(root);
 	return 0;
 }
